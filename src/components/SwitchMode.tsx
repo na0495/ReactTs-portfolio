@@ -5,7 +5,7 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 import { useChangeTheme } from '../theme/ThemeProvider';
 import useTheme from '@material-ui/core/styles/useTheme';
 
-const Home: React.FC = ()=>{
+const SwitchMode: React.FC = ()=>{
   const theme = useTheme();
   const changeTheme = useChangeTheme();
   return (
@@ -20,4 +20,4 @@ const Home: React.FC = ()=>{
   )
 }
 
-export default Home;
+export default SwitchMode;
