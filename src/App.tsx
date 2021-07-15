@@ -1,7 +1,8 @@
 import React from 'react';
 import ThemeProvider from './theme/ThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
-import Home from './components/SwitchMode';
+import SwitchMode from './components/SwitchMode';
+import Hero from './components/Home/Hero';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Home />
+      <CssBaseline/>
+      <SwitchMode/>
+      <Hero/>
     </ThemeProvider>
   );
 }
