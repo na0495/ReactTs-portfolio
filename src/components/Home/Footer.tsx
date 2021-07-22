@@ -6,7 +6,8 @@ const useStyles = makeStyles(theme => ({
     iconBox: {
         alignItems: 'center',
         justifyContent: 'center',
-        display: 'flex'
+        display: 'flex',
+        marginTop: theme.spacing(10),
     },
     copyright: {
         alignItems: 'center',
