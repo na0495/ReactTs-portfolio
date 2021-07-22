@@ -1,7 +1,6 @@
 // eslint-disable-next-line 
 import { Box, Typography, IconButton} from '@material-ui/core';
 // eslint-disable-next-line 
-import { AnimatePresence, motion } from 'framer-motion';
 import { makeStyles } from '@material-ui/core/styles'
 import Type from '../Animations/Type';
 import '../styles/icon.css';

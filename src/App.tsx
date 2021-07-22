@@ -1,6 +1,6 @@
-import React from 'react';
 import ThemeProvider from './theme/ThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
+import Particles from './components/Animations/Particles';
 import SwitchMode from './components/SwitchMode';
 import Hero from './components/Home/Hero';
 import Intro from './components/Home/Intro';
@@ -16,8 +16,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <SwitchMode/>
-      <Hero/>
+      <Particles>
+        <SwitchMode/>
+        <Hero/>
+      </Particles>
       <Intro/>
     </ThemeProvider>
   );
