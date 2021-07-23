@@ -7,6 +7,8 @@ import Intro from './components/Home/Intro';
 import Github from './components/Home/Github';
 import Footer from './components/Home/Footer';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Path from './components/Home/Path';
+// import TechStack from './components/Home/TechStack';
 
 function App() {
   const theme = createMuiTheme({
@@ -21,10 +23,12 @@ function App() {
       <CssBaseline/>
       <Particles>
         <Hero/>
+        <Intro/>
+        <Path/>
+        <Github/>
+        {/* <TechStack/> */}
+        <Footer/>
       </Particles>
-      <Intro/>
-      <Github/>
-      <Footer/>
     </ThemeProvider>
   );
 }
