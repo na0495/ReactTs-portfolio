@@ -6,11 +6,7 @@ https://na0495.netlify.app/
 <!-- deploy with ! <br> -->
 ![NETLIFY](https://img.shields.io/badge/Netlify-00C7B7?style=plastic&logo=netlify&logoColor=white)&nbsp;
 
-## Available Scripts :
-
-In the project directory, you can run:
-
-### How to run it :
+## How to run it :
 
 once you clone the repo you run `npm i` or `npm install` to install all the dependicies and then `npm start` to check the project in your local machine, or simply click on use this template.
 
