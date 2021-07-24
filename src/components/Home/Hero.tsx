@@ -1,19 +1,26 @@
 // eslint-disable-next-line 
 import { Box, Typography, IconButton} from '@material-ui/core';
+import siteConfig from '../../configs/site-config';
 // eslint-disable-next-line 
 import { makeStyles } from '@material-ui/core/styles'
 import Type from '../Animations/Type';
 import '../styles/icon.css';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     type: {
         color: 'orange',
         fontWeight: 'bold'
     },
     text: {
       fontWeight: 'bold'
-    }
-  });
+    },
+    iconBox: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      marginTop: theme.spacing(10),
+  },
+  }));
 
 export default function Hero() {
   const classes = useStyles();
@@ -30,6 +37,17 @@ export default function Hero() {
         <Typography variant="h4" className={classes.type}>
           <Type/>   
         </Typography>
+        <Box className={classes.iconBox}>
+            {siteConfig.author.accounts.map(sc => (
+                <IconButton
+                    key={sc.label}
+                    href={sc.url}
+                    aria-label={sc.label}
+                    // color={sc.type}
+                    > {sc.icon}
+                </IconButton>
+            ))}
+        </Box>
       </Box>
     </Box>
   );
