@@ -9,7 +9,11 @@ import devicesIcon from '@iconify-icons/mdi/devices';
 
 const useStyles = makeStyles(theme => ({
     chip: {
-        margin: 1,
+        margin: 2,
+        border: '2px solid'
+    },
+    box: {
+      marin: 2,
     },
     heading: {
         fontWeight: "bold",
@@ -50,7 +54,7 @@ export default function Path() {
         <VerticalTimeline>
         <VerticalTimelineElement
             className={"vertical-timeline-element--work"} 
-            contentStyle={{ background: '#ffa733', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
+            contentStyle={{ background: '#FFA07A', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
             contentArrowStyle={{ borderRight: '7px solid' }}
             date="Mar 2021 - present"
             iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
@@ -63,7 +67,7 @@ export default function Path() {
               <p>Development and deployment of a Web application that handles the delivery management of the collection of parcels.</p>
               <p>
                 The technologies i'm working with : 
-              <div className={classes.chip}>
+              <div className={classes.box}>
                 {mainTec}
               </div>
               </p>
@@ -91,7 +95,7 @@ export default function Path() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: '#ffa733', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
+            contentStyle={{ background: '#20B2AA', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
             contentArrowStyle={{ borderRight: '7px solid' }}
             date="Sep 2017 - Jun 2020"
             iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
