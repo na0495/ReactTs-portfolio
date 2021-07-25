@@ -49,14 +49,13 @@ export default function Path() {
             </Typography>
         <VerticalTimeline>
         <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{ background: 'transparent', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
+            className={"vertical-timeline-element--work"} 
+            contentStyle={{ background: '#ffa733', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
             contentArrowStyle={{ borderRight: '7px solid' }}
             date="Mar 2021 - present"
             iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
             icon={<Icon icon={devicesIcon} />}
           >
-            {/* <Box p={15}> */}
               <h3 style={{ textAlign: "left", marginBottom: "4px", fontWeight: 'bold'}}>
                 Full stack developer
               </h3>
@@ -68,11 +67,10 @@ export default function Path() {
                 {mainTec}
               </div>
               </p>
-            {/* </Box> */}
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: 'transparent', borderTop: '5px solid', borderRight: '5px solid', borderBottom: '5px solid'}}
+            contentStyle={{ background: '#ffa733', borderTop: '5px solid', borderRight: '5px solid', borderBottom: '5px solid'}}
             contentArrowStyle={{ borderRight: '7px solid' }}
             date="Sep 2020 - Jun 2021"
             iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
@@ -93,7 +91,7 @@ export default function Path() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: 'transparent', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
+            contentStyle={{ background: '#ffa733', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
             contentArrowStyle={{ borderRight: '7px solid' }}
             date="Sep 2017 - Jun 2020"
             iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
