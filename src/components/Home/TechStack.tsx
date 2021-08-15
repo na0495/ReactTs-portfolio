@@ -1,10 +1,30 @@
-import { Card, CardContent, CardMedia, Chip, Container, Grid, Typography } from "@material-ui/core";
+// import { useState, useEffect } from "react";
+import { Box, Card, Chip, Container, Typography } from "@material-ui/core";
+import LinearProgress, { LinearProgressProps } from '@material-ui/core/LinearProgress';
 import { makeStyles } from "@material-ui/core/styles";
-// import Skill from "../layout/Skill";
+
+
+function Stats(props: LinearProgressProps & { value: number }) {
+  const classes = useStyles();
+  return (
+    <Box display="flex" alignItems="center">
+      <Box width="100%"  mr={1} className={classes.line}>
+        <LinearProgress variant="determinate" {...props} />
+      </Box>
+      <Box minWidth={35}>
+        <Typography variant="body2" color="textSecondary">{`${Math.round(
+          props.value,
+        )}%`}</Typography>
+      </Box>
+    </Box>
+  );
+}
+
 
 const useStyles = makeStyles(theme => ({
   container: {
     marginTop: theme.spacing(5),
+    maxWidth: 1000
   },
   heading: {
       fontWeight: "bold",
@@ -16,107 +36,134 @@ const useStyles = makeStyles(theme => ({
   card: {
     marginTop: theme.spacing(5),
     borderRadius: 25,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
     padding: theme.spacing(5),
   },
-  skill: {
-    padding: 3,
-    width: 'auto'
-  },
-  image: {
-    width: 175,
-    height: 175,
-    display: 'flex',
-    alignItems: 'center',
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
+  line: {
+    fontWeight: "bold",
+    fontSize: "1.5em"
   },
   chip: {
-    margin: 2,
-    border: '2px solid'
+    marginLeft: theme.spacing(1),
+    marginBottom: theme.spacing(2),
+  //   backgroundColor: theme.palette.secondary.main,
+  //   color: theme.palette.secondary.contrastText,
+  //   fontSize: "1.5em",
+  //   fontWeight: "bold",
+  //   borderRadius: theme.shape.borderRadius
   }
 }));
 
 
 export default function TechStack() {
     const classes = useStyles();
+    // const [progress, setProgress] = useState(0);
+  
+    // useEffect(() => {
+    //   const timer = setInterval(() => {
+    //     setProgress((prevProgress) => (prevProgress >= 90 ? 10 : prevProgress + 10));
+    //   }, 500);
+    //   return () => {
+    //     clearInterval(timer);
+    //   };
+    // }, []);
     const Techno = [
       {
         id: 1,
-        name: 'Front-end',
-        tech: ['ReactJs', 'Redux', 'Angular', 'Bootstrap', 'Material-UI', 'Chakra-UI'],
-        img: '/stack/frontend.png'
+        title: 'Front-end',
+        lang: ['JavaScript', 'TypeScript', 'HTML', 'CSS'],
+        tech: [
+          {
+            id: 1,
+            name: 'ReactJs',
+            value: 90
+          },
+          {
+            id: 2,
+            name: 'Redux/Redux Toolkit',
+            value: 90
+          },
+          {
+            id: 3,
+            name: 'Angular',
+            value: 75
+          },
+          {
+            id: 4,
+            name: 'Material-UI / Chakra-UI',
+            value: 75
+          },
+          {
+            id: 5,
+            name: 'Bootstrap',
+            value: 60
+          },
+        ],
       },
       {
         id: 2,
-        name: 'Back-end',
-        tech: ['Django', 'Laravel'],
-        img: '/stack/backend.png'
+        title: 'Back-end',
+        lang: ['Python', 'PHP'],
+        tech: [
+          {
+            id: 1,
+            name: 'Django',
+            value: 95
+          },
+          {
+            id: 2,
+            name: 'Laravel',
+            value: 80
+          },
+        ],
       },
       {
         id: 3,
-        name: 'Data base',
-        tech: ['MySQL', 'PostgreSQL', 'SQLite'],
-        img: '/stack/database.jpg'
+        title: 'Data base',
+        lang: ['SQL'],
+        tech: [
+          {
+            id: 1,
+            name: 'SQLite',
+            value: 85
+          },
+          {
+            id: 2,
+            name: 'PostgreSQL',
+            value: 80
+          },
+          {
+            id: 3,
+            name: 'MySQL',
+            value: 60
+          },
+        ],
       },
     ]
 
     return (
         <Container className={classes.container}>
-        <Typography variant="h4" className={classes.heading}>
-          Tech Stack :
-        </Typography>
-        <div className={classes.details}>
-        {Techno.map((p, i) => (
-          <Card key={i} className={classes.card}>
-            <CardMedia
-              className={classes.image}
-              component="img"
-              alt="Back-end"
-              image={process.env.PUBLIC_URL + p.img}
-              title="Back-end"
-            />
-            <CardContent>
+          <Typography variant="h4" className={classes.heading}>
+            Tech Stack :
+          </Typography>
+
+          {Techno.map((p, i) => (
+            <Card key={i} className={classes.card}>
               <Typography gutterBottom variant="h5" component="h2">
-                {p.name}
+                {p.title}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-              {p.tech.map((p, i) => {
-                return (
-                  <Chip key={i} className={classes.chip} label={p}/>
-                );
-              })}
+              <Typography gutterBottom variant="body1" component="h2">
+              I'm familiar with working with :
               </Typography>
-            </CardContent>
-          </Card>
-        ))}
-        </div>
-            <Grid container>
-              {/* <Grid item xs={12}>
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/python.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/js.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/sql.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/java.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/c++.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/html.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/css.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/php.png" />
-              </Grid> */}
-              {/* <Grid item xs={12}>
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/django.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/react.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/redux.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/postgresql.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/git.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/github.jpg" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/npm.png" />
-                <motion.img style={{ width: 45, height: 45, borderRadius: 15}} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} src="/language/laravel.png" />
-              </Grid> */}
-            </Grid>
+                {p.lang.map((c, i) => (
+                <Chip key={i} className={classes.chip} label={c}/>
+                ))}
+                {p.tech.map((t, j) => (
+                  <><Typography variant="body2" color="textSecondary" component="p" key={j}>
+                    {t.name}
+                  </Typography><Stats value={t.value} key={j} /></>
+                ))}
+            </Card>
+          ))}
         </Container>
     )
 }

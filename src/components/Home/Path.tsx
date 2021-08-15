@@ -71,7 +71,7 @@ export default function Path() {
         <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'transparent'}}
-            // contentArrowStyle={{ borderRight: '7px solid' }}
+            contentArrowStyle={{ borderRight: '7px solid' }}
             date="Sep 2020 - Jun 2021"
             iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
             icon={<Icon icon={bookEducationOutline} />}

@@ -8,7 +8,7 @@ import Github from './components/Home/Github';
 import Footer from './components/Home/Footer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Path from './components/Home/Path';
-// import TechStack from './components/Home/TechStack';
+import TechStack from './components/Home/TechStack';
 // import Tech from './components/Home/Tech';
 // import Project from './components/Home/Project';
 
@@ -30,7 +30,7 @@ function App() {
         <Github/>
         {/* <Tech/>
         <Project/> */}
-        {/* <TechStack/> */}
+        <TechStack/>
         <Footer/>
       </Particles>
     </ThemeProvider>
