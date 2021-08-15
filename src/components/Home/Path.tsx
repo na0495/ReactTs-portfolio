@@ -22,13 +22,20 @@ const useStyles = makeStyles(theme => ({
         alignContent: "center",
         padding: theme.spacing(5),
     },
+    card: {
+      // borderRadius: 25,
+      paddingTop: 15,
+      paddingBottom: 15,
+      marginBottom: 50,
+    },
 }));
 
 export default function Path() {
     const classes = useStyles();
     const mainBachelor = ['C++ OOP programming',' Database Administration',' Relational Databases Management Systems (MySQL)', 'Networking (OSI network model)', 'Operating Systems (Linux) & bash scripitng', 'Web Development (HTML5/CSS3/JavaScript/PHP)', 'Client-Server Architecture', 'UML', 'English/French (TEC)']
     const mainDeust = ['Maths (analysis & algebre)', 'computer science','data structures & algorithm', 'C programming language', 'Database & SQL', 'physique & chemistry']
-    const mainTecheno = ['Python', 'Django', 'Django Rest Framework', 'RESTful API', 'JavaScript', 'React', 'Redux', 'Scrum', 'SQL', 'PostgreSQL', 'Git', 'Github', 'Contabo Server']
+    const mainTecheno = ['Python', 'Django', 'Django Rest Framework', 'RESTful API', 'Python  3rd party libraires', 'JavaScript', 'React', 'Redux', 'Scrum', 'SQL', 'PostgreSQL', 'Git', 'Github', 'Contabo Server']
+    const mainStack = ['Python', 'Django', 'Django Rest Framework', 'RESTful API', 'Python  3rd party libraires', 'Angular', 'TypeScript', 'Unit testing', 'Test Driven Devlopment', 'SQLite', 'PostegreSQL', 'POSTMAN', 'git', 'GitHub']
     var mainBach = mainBachelor.map((p, i) => {
         return (
           <Chip key={i} className={classes.chip} label={p}/>
@@ -46,12 +53,42 @@ export default function Path() {
           <Chip key={i} className={classes.chip} label={p}/>
         );
       });
+
+      var mainTecStack = mainStack.map((p, i) => {
+        return (
+          <Chip key={i} className={classes.chip} label={p}/>
+        );
+      });
     return (
-        <Box pb={15} pt={15}>
+        <Box className={classes.card}>
             <Typography variant="h4" className={classes.heading}>
                 Experience & studys
             </Typography>
         <VerticalTimeline>
+        <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: '#ffa733', borderTop: '5px solid', borderRight: '5px solid', borderBottom: '5px solid'}}
+            contentArrowStyle={{ borderRight: '7px solid' }}
+            date="Sep 2020 - Jun 2021"
+            iconStyle={{ background: '#CAC0A5', border: '2px solid'}}
+            icon={<Icon icon={bookEducationOutline} />}
+          >
+
+              <h3 style={{ textAlign: "left", marginBottom: "4px", fontWeight: 'bold'}}>
+                Full stack developer
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">at Atkana IT consulting </h4>
+              <p>Development of new application from scratch & scaling them along with Test Driven development 
+              methodology, development of a responsive Front-end with UX practice & Backend interface.
+              </p>
+              <p>
+              The technologies i'm working with : 
+              <div style={{ textAlign: "left", marginBottom: "4px", padding: "4px" }}>
+                {mainTecStack}
+              </div>
+              </p>
+
+          </VerticalTimelineElement>
         <VerticalTimelineElement
             className={"vertical-timeline-element--work"} 
             contentStyle={{ background: '#FFA07A', borderTop: '5px solid', borderLeft: '5px solid', borderBottom: '5px solid'}}
@@ -63,8 +100,9 @@ export default function Path() {
               <h3 style={{ textAlign: "left", marginBottom: "4px", fontWeight: 'bold'}}>
                 Full stack developer
               </h3>
-              <h4 className="vertical-timeline-element-subtitle">At PULL4YOU SERVICE S.A.R.L</h4>
-              <p>Development and deployment of a Web application that handles the delivery management of the collection of parcels.</p>
+              <h4 className="vertical-timeline-element-subtitle">at PULL4YOU SERVICE S.A.R.L</h4>
+              <p>Development of a web application from scratch & scaling it along with Scrum Agile methodology, 
+                designing UML modeling / BPM, Structing Backend & Frontend, unit testing..</p>
               <p>
                 The technologies i'm working with : 
               <div className={classes.box}>
