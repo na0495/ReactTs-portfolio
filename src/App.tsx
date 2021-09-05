@@ -1,4 +1,6 @@
+import { useMemo } from 'react';
 import ThemeProvider from './theme/ThemeProvider';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createTheme } from '@material-ui/core/styles';
 import Particles from './components/Animations/Particles';
 import SwitchMode from './components/SwitchMode';
@@ -13,11 +15,17 @@ import TechStack from './components/Home/TechStack';
 // import Project from './components/Home/Project';
 
 function App() {
-  const theme = createTheme({
-    palette: {
-      type: 'light'
-    }
-  });
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          type: prefersDarkMode ? 'dark' : 'light',
+        },
+      }),
+    [prefersDarkMode],
+  );
 
   return (
     <ThemeProvider theme={theme}>
