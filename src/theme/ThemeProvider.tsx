@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  createMuiTheme,
+  createTheme,
   ThemeProvider as MuiThemeProvider,
   Theme
 } from '@material-ui/core/styles';
@@ -33,7 +33,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children, theme }) => {
   }, themeInitialOptions);
 
   const memoizedTheme = React.useMemo(()=>{
-    return createMuiTheme({
+    return createTheme({
       ...theme,
       palette: {
         type: themeOptions.paletteType

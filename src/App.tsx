@@ -1,5 +1,5 @@
 import ThemeProvider from './theme/ThemeProvider';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import Particles from './components/Animations/Particles';
 import SwitchMode from './components/SwitchMode';
 import Hero from './components/Home/Hero';
@@ -13,7 +13,7 @@ import TechStack from './components/Home/TechStack';
 // import Project from './components/Home/Project';
 
 function App() {
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       type: 'light'
     }
