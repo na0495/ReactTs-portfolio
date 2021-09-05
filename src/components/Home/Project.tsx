@@ -3,6 +3,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { images } from "./image-data";
 import '../styles/project.css';
+import { Card } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyle = makeStyles(theme => ({
+  card: {
+    marginTop: theme.spacing(15),
+    marginBottom: theme.spacing(15),
+  },
+  image: {
+    margin: theme.spacing(1),
+    padding: theme.spacing(5),
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    blockSize: "50%",
+
+  }
+}));
 
 const variants = {
   enter: (direction: number) => {
@@ -38,6 +56,7 @@ const swipePower = (offset: number, velocity: number) => {
 
 const Project = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const classes = useStyle();
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
   // then wrap that within 0-2 to find our image ID in the array below. By passing an
@@ -50,10 +69,11 @@ const Project = () => {
   };
 
   return (
-    <>
+    <Card className={classes.card}>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
+          className={classes.image}
           src={images[imageIndex]}
           custom={direction}
           variants={variants}
@@ -84,7 +104,7 @@ const Project = () => {
       <div className="prev" onClick={() => paginate(-1)}>
         {"‣"}
       </div>
-    </>
+    </Card>
   );
 };
 

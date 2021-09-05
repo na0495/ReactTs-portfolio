@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.repoContainer ul {
+  list-style-type: none;
+}
+
+.title {
+  color: #0366d6;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-decoration: none;
+}
+.title:hover {
+  text-decoration: underline;
+}
+
+.description {
+  color: #3e4349;
+  font-size: 0.9em;
+  margin: 0.6em 0;
+}
+.languages {
+  font-size: 1em;
+}
+
+.star {
+  height: 0.7em;
+  padding-right: 0.2em;
+}
+
+.options {
+  color: #586069;
+  display: flex;
+  font-size: 0.8em;
+  margin: 0.6em 0;
+}
+.options > li:first-child {
+  padding-right: 1em;
+}
+
+.textUpdated {
+  color: rgb(121, 121, 121);
+  font-size: 0.8em;
+  margin-bottom: 2em;
+}

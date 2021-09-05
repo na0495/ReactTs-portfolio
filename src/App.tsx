@@ -11,6 +11,7 @@ import Footer from './components/Home/Footer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Path from './components/Home/Path';
 import TechStack from './components/Home/TechStack';
+// import Repo from './components/Home/Repo';
 // import Tech from './components/Home/Tech';
 // import Project from './components/Home/Project';
 
@@ -27,6 +28,7 @@ function App() {
     [prefersDarkMode],
   );
 
+
   return (
     <ThemeProvider theme={theme}>
       <SwitchMode/>
@@ -36,8 +38,7 @@ function App() {
         <Intro/>
         <Path/>
         <Github/>
-        {/* <Tech/>
-        <Project/> */}
+        {/* <Repo/> */}
         <TechStack/>
         <Footer/>
       </Particles>

@@ -23,6 +23,7 @@
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/react-vertical-timeline-component": "^3.0.1",
+    "axios": "^0.21.3",
     "framer-motion": "^4.1.17",
     "i": "^0.3.6",
     "npm": "^7.20.1",
