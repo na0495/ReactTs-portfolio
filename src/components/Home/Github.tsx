@@ -7,12 +7,14 @@ const useStyle = makeStyles(theme => ({
       display: "flex",
       justifyContent: "center",
       paddingBottom: theme.spacing(5),
+      padding: theme.spacing(3),
     },
     details: {
       display: "flex",
       alignContent: "center",
       justifyContent: "center",
       paddingBottom: theme.spacing(3),
+      paddingTop: theme.spacing(2),
     },
     heading: {
       fontWeight: "bold",
@@ -44,18 +46,18 @@ function GitHub() {
             />
         </Box>
         <Box className={classes.details}>
-        <Grid container>
-          <Grid item xs={12} sm={6}>
-            <Box className={classes.details}>
-              <img src="https://github-readme-streak-stats.herokuapp.com/?user=na0495&" alt="na0495" />
-            </Box>
+          <Grid container>
+            <Grid item xs={12} md={6}>
+              <Box className={classes.details}>
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=na0495&" alt="na0495" />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box className={classes.details}>
+                <img src="https://github-readme-stats.vercel.app/api?username=na0495&count_private=true&theme=react" alt="na0495" />
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <Box className={classes.details}>
-              <img src="https://github-readme-stats.vercel.app/api?username=na0495&count_private=true&theme=react" alt="na0495" />
-            </Box>
-          </Grid>
-        </Grid>
         </Box>
       </Card>
     </Container>
