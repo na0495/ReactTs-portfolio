@@ -1,5 +1,5 @@
 // eslint-disable-next-line 
-import { Typography, Avatar , Grid, Card, CardContent, CardMedia } from '@material-ui/core';
+import { Typography, Avatar , Grid, Card, CardContent, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import '../styles/icon.css';
 
@@ -30,7 +30,16 @@ const useStyles = makeStyles((theme) => ({
       display: 'table-cell',
       textAlign: 'center',
       verticalAlign: 'middle',
-    }
+    },
+    avatar: {
+      justifyContent: 'center',
+      alignContent: 'center',
+      display: 'flex',
+
+      margin: 'auto',
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(4),
+    },
   }));
 
 export default function Hero() {
@@ -40,10 +49,12 @@ export default function Hero() {
       <Card className={classes.card}>
         <CardContent>
           <Grid container>
-            <Grid item xs={12} md={3}>
-              <Avatar alt="Mrabet Saad" src={process.env.PUBLIC_URL + 'images/me.png'} className={classes.image} />
+            <Grid item xs={12} md={5}>
+              <Box className={classes.avatar}>
+                <Avatar alt="Mrabet Saad" src={process.env.PUBLIC_URL + 'images/me.png'} className={classes.image} />
+              </Box>
             </Grid>
-            <Grid xs={12} md={9}>
+            <Grid xs={12} md={7}>
               <Typography variant="h3" gutterBottom className={classes.heading}>
                   Let me Introduce myself :
               </Typography>
