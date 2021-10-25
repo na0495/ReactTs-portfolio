@@ -6,6 +6,9 @@ https://na0495.netlify.app/
 <!-- deploy with ! <br> -->
 ![NETLIFY](https://img.shields.io/badge/Netlify-00C7B7?style=plastic&logo=netlify&logoColor=white)&nbsp;
 
+
+# Basic usage of React env :
+
 ## How to run it :
 
 once you clone the repo you run `npm i` or `npm install` to install all the dependicies and then `npm start` to check the project in your local machine, or simply click on use this template.
@@ -34,7 +37,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 # Contribution 
-This is the list of all the contributer of the web game :
+This is the list of all the contributer of the web app :
 <br><br>
 <a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=na0495/mario-with-js"/>
